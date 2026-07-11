@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87..125,300..700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Archivo', sans-serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --color-ink: #10110f;
+  --color-charcoal: #191a17;
+  --color-slate: #5d5f58;
+  --color-paper: #f4f1ea;
+  --color-line: #d8d5ce;
+  --color-cobalt: #c6ff00;
+  --color-cobalt-dark: #aee000;
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(9 9 11 / 0.04), 0 10px 30px rgb(9 9 11 / 0.06);
+  --shadow-lift: 0 12px 36px rgb(9 9 11 / 0.12);
+}
+
+@layer base {
+  html { color-scheme: dark; scroll-behavior: smooth; background: #10110f; }
+  body { @apply bg-ink font-sans text-paper antialiased; min-width: 320px; }
+  ::selection { @apply bg-cobalt text-ink; }
+  a, button { @apply outline-none; }
+  a, button { touch-action: manipulation; }
+  a:focus-visible, button:focus-visible { box-shadow: 0 0 0 2px #10110f, 0 0 0 4px #c8ff00; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
